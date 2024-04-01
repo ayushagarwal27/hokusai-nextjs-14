@@ -3,7 +3,7 @@
 import Masonry from "react-masonry-css";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
-import Link from "next/navigation";
+import Link from "next/link";
 import { Fade } from "react-awesome-reveal";
 
 const MasonryComponent = ({ data }) => {
