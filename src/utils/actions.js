@@ -12,3 +12,16 @@ export async function getArticles() {
     throw new Error(err.message);
   }
 }
+
+export async function getArticleById(id) {
+  try {
+    const articleRes = await fetch(`http://localhost:3004/articles/${id}`);
+    const article = await articleRes.json();
+    if (Object.keys(article).length === 0) {
+      throw new Error("We could not find any articles");
+    }
+    return article;
+  } catch (e) {
+    throw new Error(e.message);
+  }
+}
