@@ -1,5 +1,6 @@
 import React from "react";
 
+export const dynamic = "force-dynamic";
 const BioPage = async () => {
   const res = await fetch(
     "https://baconipsum.com/api/?type=meat-and-filler&para=5",
