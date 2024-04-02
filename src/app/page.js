@@ -3,7 +3,7 @@ import { getArticles } from "@/utils/actions";
 import Masonry from "@/components/Masonry";
 
 export default async function Home() {
-  const slidesRes = await fetch("http://localhost:3004/carousel");
+  const slidesRes = await fetch(`${process.env.JSON_API}/carousel`);
   const slides = await slidesRes.json();
   const articles = await getArticles();
   return (

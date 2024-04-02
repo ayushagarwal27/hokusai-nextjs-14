@@ -2,7 +2,7 @@
 
 export async function getArticles() {
   try {
-    const resArticles = await fetch("http://localhost:3004/articles");
+    const resArticles = await fetch(`${process.env.JSON_API}/articles`);
     const articles = await resArticles.json();
     if (Object.keys(articles).length === 0) {
       throw new Error("We could not find any articles");
@@ -15,7 +15,7 @@ export async function getArticles() {
 
 export async function getArticleById(id) {
   try {
-    const articleRes = await fetch(`http://localhost:3004/articles/${id}`);
+    const articleRes = await fetch(`${process.env.JSON_API}/articles/${id}`);
     const article = await articleRes.json();
     if (Object.keys(article).length === 0) {
       throw new Error("We could not find any articles");
